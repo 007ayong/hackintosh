@@ -65,6 +65,12 @@ OC 0.8.3 以后，清除 Nvram 改为了模块化，自定义添加。
 
 AMD Navi 10 Series GPUs (RX 5500, RX 5600, RX 5700) 需要在 `NVRAN > Add >  7C436110-AB2A-4BBB-A880-FE41995C9F82 > boot-args` 添加 `agdpmod=pikera` 解决黑屏问题。
 
+### 网卡
+
+板载的有线网卡进行内建处理：
+
+使用 [Hackintool](https://github.com/headkaze/Hackintool) 获取有线网卡的 PCIe 设备地址，例如：`PciRoot(0x0)/Pci(0x1,0x3)/Pci(0x0,0x2)/Pci(0x4,0x0)/Pci(0x0,0x0)`，在 config.plist 中 `DeviceProperties` 中添加你的 PCIe 地址，并添加 ``built-in Data 01`。可解决 iCloud、App Store 登陆失败等问题。
+
 
 
 
